@@ -1,9 +1,16 @@
 .container {
-  display: flex;
-  justify-content: space-around;
+	display: flex;
+	justify-content: space-around;
 }
 
 h4 {
-  text-align: center;
-  text-decoration: underline;
+	text-align: center;
+	text-decoration: underline;
+	font-family: arial;
 }
+
+div {
+	font-family: arial;
+}
+
+

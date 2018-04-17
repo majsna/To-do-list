@@ -1,21 +1,16 @@
-<h4>TO DO LIST</h4>
 
 <div>
-  <div>
-    <div class="container">
-      <input [(ngModel)]="newTask">
-      <button (click)="add()">Add</button>
-    </div>
+  <div class="container">
+    <app-add-task></app-add-task>
   </div>
 
   <div class="container">
-
     <div>
-      Tasks list
+      <app-todo-task></app-todo-task>
     </div>
 
     <div>
-      Completed tasks
+      <app-done-task></app-done-task>
     </div>
 
   </div>
