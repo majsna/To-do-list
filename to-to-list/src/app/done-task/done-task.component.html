@@ -1,6 +1,6 @@
 <p>Completed tasks: {{tasksDone.length}}</p>
 <ul>
-  <li *ngFor="let task of tasksDone">
-    {{task}}
+  <li appChecked *ngFor="let task of tasksDone">
+    {{task.name}}
   </li>
 </ul>

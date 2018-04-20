@@ -2,7 +2,7 @@
 <p [ngStyle]="{color: getColor()}">Todo tasks: {{tasksList.length}}</p>
   <ul>
     <li *ngFor="let task of tasksList; let odd = odd" [ngClass]="{'odd-li': odd, 'last-li': tasksList.length===1}">
-      {{task}}
+      {{task.name}}
       <button class="btn btn-danger" (click)="remove(task)">Remove</button>
       <button class="btn btn-info" (click)="done(task)">done</button>
     </li>
