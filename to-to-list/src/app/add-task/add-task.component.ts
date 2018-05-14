@@ -17,7 +17,7 @@ export class AddTaskComponent implements OnInit {
   }
 
   add() {
-    const task: Task =({name: this.newTask, created: new Date()})
+    const task: Task =({name: this.newTask, created: new Date().toLocaleString(), isDone: false })
     this.tasksService.add(task);
     this.newTask = '';
   }
