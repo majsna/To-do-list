@@ -15,9 +15,8 @@ export class TasksService {
     })
   }
 
-  add(task: Task) {
-    const list = this.tasksListObs.getValue();
-    list.push(task);
+  add(task: Array<Task>) {
+    const list = this.tasksListObs.getValue().concat(task);
     this.tasksListObs.next(list);
   }
 
