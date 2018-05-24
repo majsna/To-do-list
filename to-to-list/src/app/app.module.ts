@@ -15,6 +15,20 @@ import {SortNamePipe} from './shared/sort-name.pipe';
 import {HttpService} from "./services/http.service";
 import {HttpClientModule} from "@angular/common/http";
 import {AppRoutingModule} from "./app.routing.module";
+import {AngularFireModule} from "angularfire2";
+import {AngularFireAuthModule} from "angularfire2/auth"
+import {LoginComponent} from "./auth/login/login.component";
+import {AuthService} from "./auth/auth.service";
+import {AuthGuardService} from "./auth/auth-guard.service";
+
+const config = {
+  apiKey: "AIzaSyAJoHFRpvaqRnjQElARkBAnD-M3ZDOKMlE",
+  authDomain: "todo-5eef9.firebaseapp.com",
+  databaseURL: "https://todo-5eef9.firebaseio.com",
+  projectId: "todo-5eef9",
+  storageBucket: "todo-5eef9.appspot.com",
+  messagingSenderId: "913324840933"
+};
 
 @NgModule({
   declarations: [
@@ -26,17 +40,22 @@ import {AppRoutingModule} from "./app.routing.module";
     DateDirective,
     TransformTaskPipe,
     SortNamePipe,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(config),
+    AngularFireAuthModule
   ],
   providers: [
     TasksService,
-    HttpService
+    HttpService,
+    AuthService,
+    AuthGuardService
   ],
   bootstrap: [AppComponent]
 })
